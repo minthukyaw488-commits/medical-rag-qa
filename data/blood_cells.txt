@@ -1,0 +1,17 @@
+Blood Cells
+
+Blood is made up of a liquid component called plasma and several types of blood cells. These cells are produced mainly in the bone marrow and each type performs a distinct function. The three main categories are red blood cells, white blood cells, and platelets.
+
+Red blood cells, also called erythrocytes, are the most numerous blood cells. Their primary role is to carry oxygen from the lungs to the body's tissues and to return carbon dioxide to the lungs to be exhaled. Red blood cells contain hemoglobin, an iron-rich protein that binds oxygen and gives blood its red color. A low red blood cell count or low hemoglobin level results in anemia.
+
+White blood cells, also called leukocytes, are part of the immune system and defend the body against infection and disease. There are five main types of white blood cells, each with a specialized role.
+
+Neutrophils are the most common white blood cells and are the body's first responders to bacterial infection. Lymphocytes include B cells, which produce antibodies, and T cells, which coordinate immune responses and destroy infected cells. Monocytes are large cells that engulf and remove pathogens and cellular debris, and they can develop into macrophages. Eosinophils help defend against parasites and are involved in allergic reactions. Basophils are the least common and release chemicals such as histamine during allergic and inflammatory responses.
+
+Platelets, also called thrombocytes, are small cell fragments that help the blood clot. When a blood vessel is injured, platelets gather at the site and stick together to form a plug that stops bleeding. A low platelet count can lead to easy bruising and prolonged bleeding, while a high count can increase the risk of clots.
+
+A complete blood count, often abbreviated as CBC, is a common blood test that measures the numbers and characteristics of these cells. It reports values such as red blood cell count, hemoglobin, white blood cell count, and platelet count. Abnormal results can indicate conditions including anemia, infection, inflammation, and disorders of the bone marrow.
+
+Blood smears are microscope slides prepared from a drop of blood and used to examine the appearance of blood cells in detail. Examining a blood smear helps identify abnormal cells and diagnose conditions such as leukemia, certain anemias, and infections.
+
+In medical artificial intelligence, blood cell classification uses image analysis and deep learning to automatically identify and count different white blood cell subtypes from microscope images. Accurate classification supports faster laboratory analysis. As with all automated medical tools, results should be confirmed by a qualified laboratory professional or doctor.

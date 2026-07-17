@@ -1,0 +1,15 @@
+Skin Lesions
+
+A skin lesion is an area of skin that differs in appearance from the surrounding normal skin. Lesions may vary in color, texture, size, or shape, and can appear anywhere on the body. They are caused by a wide range of factors including injury, infection, allergic reactions, autoimmune conditions, and skin cancers.
+
+Skin lesions are broadly divided into two categories. Primary lesions are those present from the onset of a skin condition. Common primary lesions include macules (flat, discolored spots less than one centimeter), patches (flat areas larger than one centimeter), papules (small raised bumps), plaques (raised flat-topped areas), nodules (solid raised lesions deeper than papules), vesicles (small fluid-filled blisters), and pustules (blisters containing pus). Secondary lesions develop from primary lesions over time and include crusts, scales, erosions, ulcers, and scars.
+
+Benign skin lesions are non-cancerous and very common. Examples include moles (nevi), skin tags, cherry angiomas, seborrheic keratoses, and cysts. Most benign lesions do not require treatment unless they cause discomfort or cosmetic concern.
+
+Malignant skin lesions are cancerous and require medical attention. The three most common skin cancers are basal cell carcinoma, squamous cell carcinoma, and melanoma. Melanoma is the most dangerous because it can spread to other parts of the body if not treated early.
+
+The ABCDE rule helps identify warning signs of melanoma. A stands for Asymmetry, where one half of the lesion does not match the other. B stands for Border irregularity, with edges that are ragged or blurred. C stands for Color that is uneven or contains multiple shades. D stands for Diameter larger than six millimeters. E stands for Evolving, meaning the lesion is changing in size, shape, or color over time.
+
+Diagnosis of skin lesions often begins with visual examination and dermoscopy. A biopsy, in which a small sample of the lesion is removed and examined under a microscope, is used to confirm whether a lesion is cancerous. Early detection greatly improves treatment outcomes. Anyone who notices a new, changing, or unusual skin growth should consult a dermatologist.
+
+In medical imaging and artificial intelligence research, skin lesion segmentation refers to identifying the exact boundary of a lesion in a photograph. Accurate segmentation supports automated analysis and can assist clinicians in assessing lesion characteristics. Public datasets such as ISIC are commonly used to train and evaluate these models.

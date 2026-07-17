@@ -1,0 +1,15 @@
+Medical Imaging and Artificial Intelligence
+
+Medical imaging refers to techniques used to create visual representations of the inside of the body for clinical analysis and medical intervention. Imaging helps doctors diagnose disease, plan treatment, and monitor how conditions change over time. Common imaging methods include X-ray, computed tomography, magnetic resonance imaging, ultrasound, and microscopy.
+
+X-ray imaging uses small amounts of radiation to produce images of dense structures such as bones and to reveal abnormalities in the lungs and chest. Computed tomography, or CT, combines many X-ray images to build detailed cross-sectional views of the body. Magnetic resonance imaging, or MRI, uses strong magnetic fields and radio waves to produce detailed images of soft tissues such as the brain, muscles, and organs, without using radiation. Ultrasound uses sound waves to produce real-time images and is commonly used during pregnancy and to examine internal organs. Microscopy is used to examine cells and tissues at high magnification, for example in blood smears and biopsy samples.
+
+Artificial intelligence has become an increasingly important tool in medical imaging. AI systems can analyze images to detect patterns that may indicate disease, often assisting clinicians by highlighting areas of concern or providing a preliminary assessment. These systems are especially useful for handling large volumes of images and for supporting healthcare in settings with limited access to specialists.
+
+Deep learning is the branch of artificial intelligence most commonly used in medical imaging. Convolutional neural networks, or CNNs, are a type of deep learning model designed to process images. They learn to recognize features such as edges, shapes, and textures, and can be trained to classify images, detect objects, or outline specific regions.
+
+Three common tasks in medical imaging AI are classification, segmentation, and detection. Classification assigns a label to an entire image, such as determining whether a chest X-ray shows signs of pneumonia. Segmentation identifies the exact boundaries of a structure or abnormality within an image, such as outlining a skin lesion. Detection locates and marks specific objects or regions of interest within an image.
+
+Training these models requires large, high-quality, labeled datasets. Public medical datasets, careful evaluation, and validation on independent data are essential for building reliable systems. Performance is measured using metrics such as accuracy, sensitivity, specificity, and, for segmentation, the Dice coefficient, which measures how closely a predicted region matches the true region.
+
+It is important to understand that medical AI systems are designed to support healthcare professionals, not to replace them. Automated results can contain errors and should always be reviewed by a qualified doctor. Responsible use of medical AI also requires attention to patient privacy, fairness across different populations, and transparency about how a system reaches its conclusions.

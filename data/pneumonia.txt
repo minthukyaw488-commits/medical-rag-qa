@@ -1,0 +1,15 @@
+Pneumonia and Chest X-rays
+
+Pneumonia is an infection that inflames the air sacs in one or both lungs. The air sacs, called alveoli, may fill with fluid or pus, which causes difficulty breathing and reduces the amount of oxygen that reaches the bloodstream. Pneumonia can range from mild to life-threatening and is most serious in infants, older adults, and people with weakened immune systems or existing health conditions.
+
+Pneumonia is classified by its cause. Bacterial pneumonia is often caused by Streptococcus pneumoniae and is a common cause of pneumonia in adults. Viral pneumonia can be caused by influenza viruses, respiratory syncytial virus, or coronaviruses. Fungal pneumonia is less common and usually affects people with weakened immune systems. Pneumonia can also be classified by where it was acquired, such as community-acquired pneumonia or hospital-acquired pneumonia.
+
+Common symptoms of pneumonia include cough, which may produce phlegm, fever, chills, shortness of breath, chest pain that worsens with breathing or coughing, fatigue, and sometimes confusion in older adults. Symptoms can develop gradually or come on suddenly depending on the cause.
+
+Diagnosis typically involves a physical examination, during which a doctor listens to the lungs for abnormal sounds such as crackles. A chest X-ray is one of the most important tools for confirming pneumonia. On a chest X-ray, areas of infection often appear as white or opaque regions called infiltrates or consolidation, where fluid or inflammation has replaced the normal air-filled lung tissue. Blood tests and sputum tests may also be used to identify the cause.
+
+A chest X-ray is a fast, low-radiation imaging method that produces a two-dimensional image of the chest, including the lungs, heart, and surrounding structures. Besides pneumonia, chest X-rays are used to detect conditions such as tuberculosis, lung nodules, fluid around the lungs, and an enlarged heart. Healthy lungs appear mostly dark on an X-ray because they are filled with air, while dense tissues such as bone and the heart appear white.
+
+Treatment depends on the type and severity of pneumonia. Bacterial pneumonia is treated with antibiotics, while viral pneumonia usually resolves with rest, fluids, and supportive care. Severe cases may require hospitalization and oxygen therapy. Vaccines are available to help prevent some causes of pneumonia, including the pneumococcal vaccine and the annual influenza vaccine.
+
+In medical artificial intelligence, chest X-ray classification uses deep learning models to detect signs of pneumonia and other conditions from X-ray images. Convolutional neural networks are commonly trained on large labeled datasets to distinguish normal lungs from those showing infection. These systems are designed to assist, not replace, radiologists, and any automated result should always be reviewed by a qualified doctor.

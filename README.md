@@ -1,4 +1,4 @@
-# 🩺 Medical RAG Q&A Bot
+#  Medical RAG Q&A Bot
 
 A Retrieval-Augmented Generation bot that answers medical questions **grounded in your own documents** — no hallucinated facts, sources shown for every answer.
 
@@ -44,5 +44,5 @@ streamlit run app.py
 - **Persistent chat:** store conversation history
 - **Citations inline:** number sources and reference them in the answer text
 
-## ⚠️ Disclaimer
+## Disclaimer
 Educational project only. Not a medical device. Always consult a qualified doctor.

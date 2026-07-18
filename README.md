@@ -46,3 +46,7 @@ streamlit run app.py
 
 ## Disclaimer
 Educational project only. Not a medical device. Always consult a qualified doctor.
+
+## Author
+
+**NOVEM (Min Thu Kyaw)** — Medical AI Student, Konyang University

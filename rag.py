@@ -1,15 +1,10 @@
 """
 rag.py — Retrieval + generation logic. Imported by app.py.
-
-No FAISS — numpy cosine similarity search (fast enough for <100k chunks).
-
-Set your key first:  export GROQ_API_KEY="gsk_..."
+No Streamlit code here — this file is pure logic.
 """
 
 import os
 
-# Anaconda ships a broken TensorFlow on Apple Silicon; transformers tries to
-# import it and hard-crashes (bus error). We are PyTorch-only, so disable TF.
 os.environ["USE_TF"] = "0"
 os.environ["USE_TORCH"] = "1"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
@@ -38,7 +33,7 @@ Answer ONLY using the provided context. Rules:
 class MedicalRAG:
     def __init__(self):
         self.embedder = SentenceTransformer(EMBED_MODEL)
-        self.embeddings = np.load(STORE_DIR / "embeddings.npy")  # (N, dim), normalized
+        self.embeddings = np.load(STORE_DIR / "embeddings.npy")
         with open(STORE_DIR / "meta.pkl", "rb") as fh:
             self.metadata = pickle.load(fh)
         self.client = Groq(api_key=os.environ["GROQ_API_KEY"])
@@ -46,11 +41,8 @@ class MedicalRAG:
     def retrieve(self, query: str, k: int = TOP_K) -> list[dict]:
         q = self.embedder.encode([query], normalize_embeddings=True)
         q = np.asarray(q, dtype="float32")[0]
-
-        # Both sides are normalized -> dot product IS cosine similarity
-        scores = self.embeddings @ q                      # (N,)
-        top = np.argsort(-scores)[:k]                     # highest first
-
+        scores = self.embeddings @ q
+        top = np.argsort(-scores)[:k]
         results = []
         for idx in top:
             item = dict(self.metadata[int(idx)])
@@ -62,7 +54,6 @@ class MedicalRAG:
         hits = self.retrieve(query)
         context = "\n\n---\n\n".join(f"[{h['source']}] {h['text']}" for h in hits)
         user_msg = f"Context:\n{context}\n\nQuestion: {query}"
-
         resp = self.client.chat.completions.create(
             model=LLM_MODEL,
             temperature=0.2,
@@ -74,7 +65,6 @@ class MedicalRAG:
         return {"answer": resp.choices[0].message.content, "sources": hits}
 
 
-# Quick CLI test:  python rag.py "what causes anemia?"
 if __name__ == "__main__":
     import sys
     q = " ".join(sys.argv[1:]) or "What is pneumonia?"

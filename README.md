@@ -1,4 +1,4 @@
-Medical RAG Q&A Bot
+## Medical RAG Q&A Bot
 
 A Retrieval-Augmented Generation bot that answers medical questions **grounded in your own documents** — no hallucinated facts, sources shown for every answer, and honest refusals when a question falls outside the docs.
 

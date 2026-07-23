@@ -134,7 +134,7 @@ div[data-testid="column"] .stButton > button:focus { color: var(--text); border-
 [data-testid="stChatMessage"] { background: transparent; padding: .15rem 0; border: none; }
 [data-testid="stChatMessageContent"] { color: var(--text); }
 .bubble-user { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: #fff; padding: .78rem 1.1rem; border-radius: 18px 18px 5px 18px; display: inline-block; max-width: 100%; font-size: .93rem; line-height: 1.5; box-shadow: 0 6px 18px rgba(37,99,235,.22); }
-.answer-card { background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.3rem; box-shadow: var(--shadow); color: var(--text); }
+[data-testid="stChatMessage"] [data-testid="stVerticalBlockBorderWrapper"] { background: var(--surface-solid); border: 1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); color: var(--text); }
 .chips { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .85rem; }
 .chip { font-size: .71rem; font-weight: 600; padding: .3rem .65rem; border-radius: 999px; border: 1px solid var(--border); color: var(--muted); background: var(--surface); }
 .chip.high { color: #059669; border-color: rgba(5,150,105,.32); }
@@ -230,15 +230,38 @@ def dedupe_sources(sources: list[dict]) -> list[dict]:
     return sorted(best.values(), key=lambda x: x["score"], reverse=True)
 
 
-def confidence(sources: list[dict]) -> tuple[str, str]:
+REFUSAL_HINTS = (
+    "don't have that information",
+    "do not have that information",
+    "doesn't contain",
+    "does not contain",
+    "no information about",
+    "not in the provided context",
+)
+
+
+def is_refusal(answer: str) -> bool:
+    """True when the model declined because the context lacked the answer."""
+    low = answer.lower()
+    return any(h in low for h in REFUSAL_HINTS)
+
+
+def confidence(sources: list[dict], answer: str = "") -> tuple[str, str]:
+    """Grade how well the retrieved context supports the answer.
+
+    S-PubMedBERT scores cluster high (0.85+) across all medical text, so the
+    thresholds are tuned to that range rather than a generic 0-1 spread.
+    """
+    if answer and is_refusal(answer):
+        return "Not in knowledge base", "low"
     if not sources:
-        return "Low confidence", "low"
+        return "No sources", "low"
     top = max(s["score"] for s in sources)
-    if top >= 0.50:
-        return "High confidence", "high"
-    if top >= 0.35:
-        return "Medium confidence", "med"
-    return "Low confidence", "low"
+    if top >= 0.93:
+        return "Strong match", "high"
+    if top >= 0.90:
+        return "Partial match", "med"
+    return "Weak match", "low"
 
 
 def category_of(sources: list[dict]) -> str | None:
@@ -256,11 +279,12 @@ def pretty_name(filename: str) -> str:
 
 
 def render_meta(answer: str, sources: list[dict]) -> None:
-    label, cls = confidence(sources)
+    label, cls = confidence(sources, answer)
     chips = [f"<span class='chip {cls}'>{label}</span>"]
-    cat = category_of(sources)
-    if cat:
-        chips.append(f"<span class='chip cat'>{cat}</span>")
+    if not is_refusal(answer):
+        cat = category_of(sources)
+        if cat:
+            chips.append(f"<span class='chip cat'>{cat}</span>")
     chips.append(f"<span class='chip'>{reading_time(answer)}</span>")
     st.markdown(f"<div class='chips'>{''.join(chips)}</div>", unsafe_allow_html=True)
 
@@ -380,9 +404,8 @@ for i, msg in enumerate(st.session_state.messages):
             )
     else:
         with st.chat_message("assistant"):
-            st.markdown("<div class='answer-card'>", unsafe_allow_html=True)
-            st.markdown(msg["content"])
-            st.markdown("</div>", unsafe_allow_html=True)
+            with st.container(border=True):
+                st.markdown(msg["content"])
             render_meta(msg["content"], msg.get("sources", []))
             a, b, c, _ = st.columns([1, 1, 1, 3])
             with a:
@@ -429,9 +452,8 @@ if question:
                 st.stop()
             elapsed = time.time() - started
         st.session_state.times.append(elapsed)
-        st.markdown("<div class='answer-card'>", unsafe_allow_html=True)
-        st.markdown(result["answer"])
-        st.markdown("</div>", unsafe_allow_html=True)
+        with st.container(border=True):
+            st.markdown(result["answer"])
         render_meta(result["answer"], result["sources"])
         render_sources(result["sources"])
     st.session_state.messages.append(

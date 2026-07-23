@@ -8,8 +8,6 @@ A Retrieval-Augmented Generation bot that answers medical questions **grounded i
 
 **Stack:** S-PubMedBERT (medical embeddings) · NumPy (vector search) · Groq LLaMA 3.3 (generation) · Streamlit (UI)
 
-![Architecture](architecture.svg)
-
 ## How it works
 ```
 Docs -> chunk -> embed -> vector store      (ingest.py, run once)

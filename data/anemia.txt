@@ -1,12 +1,16 @@
-Anemia is a condition in which the body does not have enough healthy red blood cells.
-Red blood cells carry oxygen to the body's tissues. Common symptoms of anemia include
-fatigue, weakness, pale skin, shortness of breath, dizziness, and cold hands and feet.
+Source: MedlinePlus
+URL: https://medlineplus.gov/anemia.html
+Retrieved: 2026-07-27
 
-Iron-deficiency anemia is the most common type, caused by a lack of iron in the body.
-It can result from blood loss, poor diet, or the body's inability to absorb iron.
-Treatment often includes iron supplements and eating iron-rich foods such as red meat,
-beans, and leafy green vegetables.
-
-Vitamin deficiency anemia can occur when the body lacks vitamin B12 or folate.
-Severe or untreated anemia can lead to complications including heart problems and
-extreme fatigue. Anyone with persistent symptoms should consult a doctor.
+Prevention and Risk Factors
+If you have anemia, your blood does not carry enough oxygen to the rest of your body.  The most common cause of anemia is not having enough iron . Your body needs iron to make hemoglobin. Hemoglobin is an iron-rich protein that gives the red color to blood. It carries oxygen from the lungs to the rest of the body.
+Anemia has three main causes: blood loss, lack of red blood cell production, and high rates of red blood cell destruction.
+Conditions that may lead to anemia include:
+Colon polyps or colon cancer
+A diet that does not have enough iron, folic acid or vitamin B12
+Blood disorders such as sickle cell anemia and thalassemia , or cancer
+Aplastic anemia , a condition that can be inherited or acquired
+G6PD deficiency , a metabolic disorder
+Anemia can make you feel tired, cold, dizzy, and irritable. You may be short of breath or have a headache.
+Your doctor will diagnose anemia with a physical exam and blood tests. Treatment depends on the kind of anemia you have.
+NIH: National Heart, Lung, and Blood Institute

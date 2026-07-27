@@ -40,16 +40,28 @@ GITHUB_URL = "https://github.com/minthukyaw488-commits/medical-rag-qa"
 CATEGORY_MAP = {
     "anemia": "Hematology",
     "blood_cells": "Hematology",
+    "blood_disorders": "Hematology",
+    "leukemia": "Hematology",
     "pneumonia": "Respiratory",
+    "asthma": "Respiratory",
+    "tuberculosis": "Respiratory",
+    "heart_failure": "Cardiovascular",
+    "hypertension": "Cardiovascular",
+    "diabetes": "Endocrine",
     "skin_lesion": "Dermatology",
+    "skin_cancer": "Dermatology",
+    "melanoma": "Dermatology",
     "medical_imaging_ai": "Imaging and AI",
+    "ct_scans": "Imaging and AI",
+    "mri_scans": "Imaging and AI",
+    "x_rays": "Imaging and AI",
 }
 
 SUGGESTIONS = [
-    ("What are the five types of white blood cells?", "Hematology"),
-    ("How does pneumonia appear on a chest X-ray?", "Respiratory"),
-    ("What is the ABCDE rule for melanoma?", "Dermatology"),
-    ("What is the difference between classification and segmentation?", "Imaging and AI"),
+    ("What are the warning signs of melanoma?", "Dermatology"),
+    ("What causes heart failure?", "Cardiovascular"),
+    ("How is tuberculosis treated?", "Respiratory"),
+    ("When is an MRI used instead of a CT scan?", "Imaging and AI"),
 ]
 
 # --- inline SVG icons (no emoji) ---------------------------------------
@@ -358,15 +370,6 @@ with st.sidebar:
         "run `python ingest.py`, then restart the app."
     )
 
-st.markdown(
-    "<div class='topbar fade'><div class='brand'><div class='dot'>"
-    f"<span class='icn'>{ICON_CROSS}</span></div>Medical AI Assistant</div>"
-    f"<div class='navlinks'><a href='{GITHUB_URL}' target='_blank' "
-    f"rel='noopener'>GitHub</a><a href='{GITHUB_URL}#readme' target='_blank' "
-    "rel='noopener'>About</a></div></div>",
-    unsafe_allow_html=True,
-)
-
 if not st.session_state.messages:
     st.markdown(
         '<div class="hero fade"><div class="mark">'
@@ -467,6 +470,6 @@ st.markdown(
     "<span>sentence-transformers</span><span>NumPy</span>"
     "<span>Streamlit</span></div>"
     f"<a href='{GITHUB_URL}' target='_blank' rel='noopener'>View source on GitHub</a>"
-    "<br>Built by NOVEM (Min Thu Kyaw), Medical AI, Konyang University</div>",
+    "<br>Built by NOVEM</div>",
     unsafe_allow_html=True,
 )
